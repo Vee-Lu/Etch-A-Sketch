@@ -1,0 +1,46 @@
+
+#title {
+    text-align: center;
+    font-family:Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.border .container .grid {
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    
+    
+}
+
+.border .container {
+    display: grid;
+
+    width: 600px;
+    height: 600px;
+    padding: .05px;
+
+    border-style: solid;
+    border-color: red;
+    border-width: 70px;
+    border-radius: 20px;
+    
+   
+}
+
+.border {
+    display: flex;
+    justify-content: center;
+}
+
+
+.resetContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.reset {
+   
+}
+

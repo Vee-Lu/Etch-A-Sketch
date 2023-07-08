@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <link rel = "stylesheet" href = "styles.css">
+        <script src = "sketch.js" defer>createGrid(16,16)</script>
+        <title>Etch-A-Sketch</title>
+    </head>
+
+    <body>
+
+
+        <p id = "title">Etch-A-Sketch</p>
+
+        <div class = "options">
+            <button id = "red">Red</button>
+        </div>
+        
+
+        <div class = "border">
+            <div class = "container"></div>
+        </div>
+       
+
+        <input type = "range", min = "1", max = "100", value = "50", oninput="rangeValue.innerText = this.value">
+        <p id = "rangeValue">50</p>
+        <div class = "leftSide">
+           
+            <button class = "reset">Reset</button>
+        </div>
+       
+        
+       
+       
+    </body>
+
+
+
+
+
+
+</html>
