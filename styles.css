@@ -1,20 +1,69 @@
+body {
+    background-color: gray;
+}
 
 #title {
     text-align: center;
     font-family:Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: large;
     font-weight: bolder;
+    color: rgb(236, 54, 15 );
+    text-shadow: 1px 1px #e4e008;
 }
 
-.border .container .grid {
-    background-color: white;
-    border-style: solid;
-    border-color: black;
-    
-    
+#creator {
+    text-align: center;
+    font-family:Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bolder;
+    color: rgb(236, 54, 15 );
+    text-shadow: 1px 1px #e4e008;
 }
 
-.border .container {
+
+#container {
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+#container #leftside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+        
+  }
+
+  #container #rightside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+        
+  }
+
+
+#container #leftside button {
+  display: flex;
+  justify-content: center;
+
+  background-color: white;
+  padding: 5px 30px; 
+}
+
+#container #rightside  button{
+  display: flex;
+  justify-content: center;
+
+  background-color: white;
+  padding: 5px 30px; 
+        
+  }
+
+#border {
+    display: flex;
+    justify-content: center;
+}
+
+#border #gridContainer {
     display: grid;
 
     width: 600px;
@@ -22,25 +71,19 @@
     padding: .05px;
 
     border-style: solid;
-    border-color: red;
+    border-color: rgb(236, 54, 15 );
     border-width: 70px;
     border-radius: 20px;
+
+    box-shadow: 5px 10px;
     
    
 }
 
-.border {
-    display: flex;
-    justify-content: center;
+#border #gridContainer .grid {
+    background-color: white;
+    border-style: solid;
+    border-color: darkgray;    
 }
 
-
-.resetContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.reset {
-   
-}
 

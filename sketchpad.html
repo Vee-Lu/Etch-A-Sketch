@@ -10,24 +10,67 @@
     <body>
 
 
-        <p id = "title">Etch-A-Sketch</p>
+        <h1 id = "title">Etch-A-Sketch</h1>
+        <p id = "creator">By Vee</p>
 
-        <div class = "options">
-            <button id = "red">Red</button>
-        </div>
-        
+        <div id = "container">
 
-        <div class = "border">
-            <div class = "container"></div>
+            <div id = "leftside">
+                <button class = "color">Red</button>
+                <p></p>
+                <button class = "color">Orange</button>
+                <p></p>
+                <button class = "color">Yellow</button>
+                <p></p>
+                <button class = "color">Green</button>
+                <p></p>
+                <button class = "color">Blue</button>
+                <p></p>
+                <button class = "color">Purple</button>
+                <p></p>
+                <button class = "color">Pink</button>
+                <p></p>
+                <button class = "color">Black</button>
+                <p></p>
+                <button class = "rainbow">Rainbow</button>
+            </div>
+
+            <div id = "border">
+                <div id = "gridContainer"></div>
+            </div>
+
+            <div id = "rightside">
+                <button id = "reset">Reset</button>
+                <p></p>
+                <button class = "prompt">Enter your own</button>
+                <p></p>
+                <button class = "size">2 x 2</button>
+                <p></p>
+                <button class = "size">4 x 4</button>
+                <p></p>
+                <button class = "size">8 x 8</button>
+                <p></p>
+                <button class = "size">16 x 16</button>
+                <p></p>
+                <button class = "size">32 x 32</button>
+                <p></p>
+                <button class = "size">64 x 64</button>
+                <p></p>
+                <button class = "size">100 x 100</button>
+                
+            </div>
+           
         </div>
+     
+     
+       
        
 
-        <input type = "range", min = "1", max = "100", value = "50", oninput="rangeValue.innerText = this.value">
-        <p id = "rangeValue">50</p>
-        <div class = "leftSide">
-           
-            <button class = "reset">Reset</button>
-        </div>
+       
+       
+       
+        
+
        
         
        
