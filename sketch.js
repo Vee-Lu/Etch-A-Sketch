@@ -15,14 +15,23 @@ function createGrid(size){
         grid.classList.add("grid");
         gridContainer.appendChild(grid);
 
+        //Add an event listener that when the mouse is over any grid, color it
+        grid.addEventListener("mouseover",function(){    
+            grid.setAttribute('style', `background: ${colorChoice};`);  
+        });
+
         //Organize the grid (the fr will make it so it won't overflow the container);
         gridContainer.style.gridTemplateColumns = `repeat(${size}, 100fr)`;
         gridContainer.style.gridTemplateRows = `repeat(${size}, 100fr)`;
     
-       //Allow the grids to each be colored
-        addColor(colorChoice);
     }
     
+    //Button to reset the grid back to white
+    const reset = document.querySelector("#reset");
+    const grids = document.querySelectorAll(".grid");
+    reset.addEventListener("click",function(){
+        grids.forEach(grid => grid.setAttribute('style', 'background: white;'));  
+    });
 }
 
 /**
@@ -54,35 +63,44 @@ sizes.forEach(size => size.addEventListener("click",function(){
    
 }));
 
+//Get the prompt button and when prompted, make the user enter the dimensions of the square
+const promptButton = document.querySelector(".prompt");
+
+promptButton.addEventListener("click", function(){
+    let size = prompt("What size do you want the grid to be?", "");
+    if(+size > 100){
+        alert("Cannot exceed 100 x 100 dimensions!") 
+        return;
+    } 
+
+    clearGrid();
+    createGrid(+size);
+});
+
 //Get every button option that has an color option (besides the Rainbow option)
 const colors = document.querySelectorAll(".color");
 colors.forEach(color => color.addEventListener("click", function(){
     colorChoice = this.innerText;
-    addColor(colorChoice);
+    //addColor(colorChoice);
 }));
 
 /**
  * Function that accesses each square in the grid container to make it be colored
  */
+
+/*
 function addColor(colorChoice){
-   //Get each individual sqaure from the grid
-    const squares = document.querySelectorAll(".grid");
-    //When the mouse is holding down and hovered, turn the squares black
-    squares.forEach(square => square.addEventListener("mousedown",function(){
-        squares.forEach(square => square.addEventListener("mouseover",function(){
-            square.setAttribute('style', `background: ${colorChoice};`);  
-        }));
-    }));
-}
+    //Get each individual sqaure from the grid
+     const squares = document.querySelectorAll(".grid");
+     //When the mouse is holding down and hovered, turn the squares black
+     squares.forEach(square => square.addEventListener("mouseover",function(){    
+         square.setAttribute('style', `background: ${colorChoice};`);  
+     }));
+ }
+ */
 
-
-//Button to reset the grid back to white
-const reset = document.querySelector("#reset");
-reset.addEventListener("click",function(){
-    squares.forEach(square => square.setAttribute('style', 'background: white;'));  
-});
 
 
 //Automatically default the Etch-A-Sketch to a 16 x 16
 createGrid(16);
-addColor(colorChoice);
+
