@@ -1,7 +1,7 @@
 //Grab the grid container using the query selector
 const gridContainer = document.querySelector("#gridContainer");
 //Automatically default the paint color to black
-let colorChoice = "black";
+let colorChoice = "Black";
 
 /**
  * This function creates the number of sqaures needed to create the Etch-A-Sketch
@@ -16,8 +16,20 @@ function createGrid(size){
         gridContainer.appendChild(grid);
 
         //Add an event listener that when the mouse is over any grid, color it
-        grid.addEventListener("mouseover",function(){    
-            grid.setAttribute('style', `background: ${colorChoice};`);  
+        grid.addEventListener("mouseover",function(){  
+              
+            if(colorChoice == "Rainbow"){
+                let r = Math.floor(Math.random()*(255 + 1));
+                let g = Math.floor(Math.random()*(255 + 1));
+                let b = Math.floor(Math.random()*(255 + 1));
+                colorChoice = `rgb(${r},${g},${b})`;
+                grid.setAttribute('style', `background: ${colorChoice};`);  
+            }
+
+            else {
+                grid.setAttribute('style', `background: ${colorChoice};`);  
+            }
+           
         });
 
         //Organize the grid (the fr will make it so it won't overflow the container);
@@ -81,6 +93,7 @@ promptButton.addEventListener("click", function(){
 const colors = document.querySelectorAll(".color");
 colors.forEach(color => color.addEventListener("click", function(){
     colorChoice = this.innerText;
+    console.log(colorChoice);
     //addColor(colorChoice);
 }));
 
